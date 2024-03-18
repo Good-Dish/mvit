@@ -5,6 +5,8 @@
 import argparse
 import sys
 
+sys.path.append('D:/pythonProject/mvit')
+
 import mvit.utils.checkpoint as cu
 from engine import test, train
 from mvit.config.defaults import assert_and_infer_cfg, get_cfg
@@ -82,6 +84,7 @@ def load_config(args):
         cfg.merge_from_list(args.opts)
 
     # Inherit parameters from args.
+    # hasattr(object, name) 函数用于判断对象是否包含对应的属性
     if hasattr(args, "num_shards") and hasattr(args, "shard_id"):
         cfg.NUM_SHARDS = args.num_shards
         cfg.SHARD_ID = args.shard_id

@@ -6,6 +6,20 @@
 import torch
 from fvcore.common.registry import Registry
 
+"""
+from fvcore.common.registry import Registry
+# 创建一个Registry对象
+registry_machine = Registry('registry_machine')
+# 注册
+@registry_machine.register()
+def print_hello_world(word):
+    print(word)
+# 其中cfg为所调用的函数名/类名
+cfg = "print_hello_world"
+# 相当与调用print_hello_world('hello world')
+registry_machine.get(cfg)('hello world')
+"""
+
 MODEL_REGISTRY = Registry("MODEL")
 MODEL_REGISTRY.__doc__ = """
 Registry for models.
